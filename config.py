@@ -13,4 +13,19 @@ LINE_END = (768, 288)
 
 DEMO_IMAGE_PATH = "demo_image.png"
 DEMO_OUTPUT_PATH = "opencv_basics_panel.png"
+%%writefile download_sample_video.py
+import urllib.request
+import config
+
+URL = "https://raw.githubusercontent.com/opencv/opencv/master/samples/data/vtest.avi"
+
+
+def main():
+    print(f"Downloading sample video to {config.VIDEO_SOURCE} ...")
+    urllib.request.urlretrieve(URL, config.VIDEO_SOURCE)
+    print("Done.")
+
+
+if __name__ == "__main__":
+    main()
 
